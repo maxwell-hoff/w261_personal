@@ -1,0 +1,5 @@
+5	bar	
+5	foo	
+100	labs	
+9	quux	
+1	qi	
