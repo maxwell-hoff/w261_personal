@@ -1,4 +1,4 @@
-### Instructions:
+# Homework 3: Synonym Detection In Spark
 
 ### How to submit your work:
 #### Step 1 of 2
