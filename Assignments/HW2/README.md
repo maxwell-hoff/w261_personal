@@ -3,6 +3,7 @@
 In our second assignment we'll dive deeper into the Map Reduce paradigm and introduce a new framework for parallel computation: Hadoop MapReduce. This assignment has historically been one of the most challenging for students because of the learning curve associated with this techonology and the programming paradigm. This semester we used the live sessions to give you a structured introduction to the framework and Hadoop syntax before you go on to use it to perform NaiveBayes. If you have not yet completed the `wk2Demo` and  `wk3Demo`notebooks you should do that now before the homework. We strongly encourage you to start early and to support each other on Slack.
 
 ### How to submit your work:
+#### Step 1 of 2.
 
 Submit your work by pushing your completed notebook and supplemental files to your assigned student repository on Git. The file structure should look like this:
 
@@ -21,6 +22,9 @@ S18-1-<user>
      --HelpfulResources
      etc..
 ```
+#### Step 2 of 2.
+Please submit the link to your notebook (not just the directory, the actual notebook) using the following form:
+-  https://docs.google.com/forms/d/1kwp--WoxSm96xQ7OAjZl8PTeHW-C-yrb8kg6jdn1UwQ
 
 ### Tips:
 
