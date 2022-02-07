@@ -6,3 +6,4 @@ Live session demo exercises aim to give you a chance to apply content from the a
 - Week 1: https://docs.google.com/presentation/d/1bJSkS8KhjarIe9KGq57T7HV1ak-mQhXEuq9riSXeWGA/edit#slide=id.g39bdd87640_0_178
 - Week 2: https://docs.google.com/presentation/d/1EMfEvKA1XJDdc_7zr2aYNToyv6imLjC8OJRVzrel23I/edit#slide=id.g39bdd87640_0_178
 - Week 4: https://docs.google.com/presentation/d/1Y8W4WAWcF7ZgXZcRcDtfb-GpIbEWNb7X5lPTm5FpIaA/edit#slide=id.p
+- Week 5: https://docs.google.com/presentation/d/1iPuAedvuaPQ3bbq11-2a4nT2nkg5wiQchyCE4XEk434/edit#slide=id.gdc96ba8a07_0_265
