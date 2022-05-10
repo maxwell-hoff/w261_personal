@@ -1,6 +1,6 @@
 # w261 Machine Learning at Scale
 
-## Welcome to w261 Fall 2021!
+## Welcome to w261 Summer 2022!
 
 ### Important Actions:
 - Homework submission form:
@@ -11,4 +11,4 @@
 - Fill out the Google Form:
   - https://forms.gle/CkHRqGY5HWahnBJLA
 - Join Slack Channels:
-  - Prefix: `#datasci-261-2021-fall-`
+  - Prefix: `#datasci-261-2022-summer-`
