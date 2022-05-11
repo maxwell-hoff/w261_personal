@@ -3,10 +3,12 @@
 ## Welcome to w261 Summer 2022!
 
 ### Important Actions:
-- Homework submission form:
-  - Please use the following form to submit each homework and project: 
-  - https://docs.google.com/forms/d/1kwp--WoxSm96xQ7OAjZl8PTeHW-C-yrb8kg6jdn1UwQ/edit
-- Fill out the Google Form:
-  - https://forms.gle/CkHRqGY5HWahnBJLA
-- Join Slack Channels:
+- Homework Assignment submissions should be made via the Canvas LMS located here:
+  - https://canvas.instructure.com/courses/4745907
+  - Please click on the Assignments link on the left hand side rail menu to see the HW assignments
+- The following us a recommended workflow for HW submissions:
+  - Review the quiz form on Canvas
+  - Then complete all homework responses in your Jupyter Notebook
+  - Once completed, please upload your noteboook and fill in the reponses on Canvas
+- Cross-check: Did you join course Slack Channels:
   - Prefix: `#datasci-261-2022-summer-`
