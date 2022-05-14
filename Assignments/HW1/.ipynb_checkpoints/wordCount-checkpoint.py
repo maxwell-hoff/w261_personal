@@ -34,10 +34,9 @@ for line in sys.stdin:
 ############ YOUR CODE HERE #########
 
 
-    for word in words:
-        x+=1
 
-print(x)
+
+
 
 
 ############ (END) YOUR CODE #########
