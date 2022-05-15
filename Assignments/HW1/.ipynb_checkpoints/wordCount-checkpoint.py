@@ -33,10 +33,14 @@ for line in sys.stdin:
 
 ############ YOUR CODE HERE #########
 
+    i=0
+    for word in words:
+        if  word in counts:
+            counts[word] += 1
+        else:
+            counts[word] = 1
+        i+=1
 
-
-
-
-
+print(counts)
 
 ############ (END) YOUR CODE #########
