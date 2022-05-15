@@ -93,7 +93,7 @@ if [ $# -eq 4 ]
     reducer=$4
     ################ YOUR CODE HERE #############
     #Q6c
-    $reducer  $data.output > $data.output
+    $reducer  < $datachunk > $datachunk.counts &
 
     ################# (END YOUR CODE)###########
 fi
