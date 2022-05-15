@@ -41,6 +41,7 @@ for line in sys.stdin:
             counts[word] = 1
         i+=1
 
-print(counts)
+for count in counts:
+    print(count, counts[count])
 
 ############ (END) YOUR CODE #########
