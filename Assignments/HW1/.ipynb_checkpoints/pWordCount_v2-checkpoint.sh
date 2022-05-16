@@ -11,16 +11,10 @@
 #             simply stream the mapper output.
 #
 # Instructions:
-#    For Q6a - Read this script and its comments closely. Ignore the
-#              part marked "Otherwise" in STEP 3, you'll use that later.
-#    For Q6c - Add a single line of code under '#Q6c' in STEP 3 so that
-#              the script pipes the output of each chunk's word countfiles
-#              into the second executable script provided as an argument,
-#              Note that we saved the script name (which was the 4th arg)
-#              to the variable $reducer. It can be executed by piping the
-#              counts to './$reducer' -- don't forget to redirect the output
-#              of this second script into $data.output
-
+#    For Q7b - Ammend this script in STEP 2 and STEP 3 to 
+#              alphabtetically sort the contents of each chunk before
+#              piping them into the reducer script and redirecting on to 
+# .            $data.output.
 # --------------------------------------------------------------------
 
 usage()
@@ -66,7 +60,15 @@ split -l $linesinchunk $data $data.chunk.
 for datachunk in $data.chunk.*; do
     # redirect the lines of text into the user supplied executable (mapper)
     # and redirect STDOUT to a temporary file on disk
-    ./$mapper  < $datachunk > $datachunk.counts &
+    
+    
+    ################ YOUR CODE HERE #############
+    # Modify the line from pWordCount_v1.sh, so that  
+    # each chunk is individually sorted. 
+
+    
+    ################# (END YOUR CODE)###########
+    
 done
 # wait for the mappers to finish their work
 wait
@@ -92,8 +94,11 @@ if [ $# -eq 4 ]
   then
     reducer=$4
     ################ YOUR CODE HERE #############
-    #Q6c
-    cat $countfiles | ./$reducer
+    # write one line to merge the individual chunks,
+    # pipe to the reducer script, and redirect to 
+    # output file
+    
+
 
     ################# (END YOUR CODE)###########
 fi
