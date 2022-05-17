@@ -42,6 +42,7 @@ for line in sys.stdin:
         i+=1
 
 for count in counts:
-    print(count, counts[count])
+#     return count , counts
+    print(f"{count}\t{counts[count]}")
 
 ############ (END) YOUR CODE #########

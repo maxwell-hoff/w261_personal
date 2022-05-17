@@ -23,11 +23,28 @@ import sys
 ################# YOUR CODE HERE #################
 
 
-
-
-
-
-
+# failed attempt commented out below:
+# #initialize
+# prev_word=''
+# prev_count=0
+# i=0
+# # stream over lines from Standard Input
+# for line in sys.stdin:
+#     # extract words & counts
+#     word, count  = line.split()
+#     if word != prev_word:
+#         print(prev_word, prev_count)
+#     prev_word=word
+#     prev_count=count
+#     if word == prev_word:
+#         prev_count+=count
+    
+    
+# stream over lines from Standard Input
+for line in sys.stdin:
+    # extract words & counts
+    word, count  = line.split()
+    print(word,count)
 
 
 
