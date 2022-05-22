@@ -17,6 +17,8 @@ for line in sys.stdin:
     words = re.findall(r'[a-z]+', subject + ' ' + body)
     
 ############ YOUR CODE HERE #########
-
+    for word in words:
+        count=1
+        print(f"{word}\t{_class}\t{count}")
 
 ############ (END) YOUR CODE #########

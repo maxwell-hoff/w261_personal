@@ -19,19 +19,24 @@ for line in sys.stdin:
     word, is_spam, count = line.split('\t')
     
 ############ YOUR CODE HERE #########
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    if current_word == None:
+        if is_spam == "0":
+            ham_count+=1
+        if is_spam == "1":
+            spam_count+=1
+    if word == current_word:
+        if is_spam == "0":
+            ham_count+=1
+        if is_spam == "1":
+            spam_count+=1
+    else:
+        for x in is_spam:
+            print(f"{current_word}\t0\t{ham_count}")
+            print(f"{current_word}\t1\t{spam_count}")
+            if is_spam == "0":
+                ham_count+=1
+            if is_spam == "1":
+                spam_count+=1
+    current_word = word
 
 ############ (END) YOUR CODE #########
