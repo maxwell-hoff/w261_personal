@@ -18,7 +18,6 @@ for line in sys.stdin:
     
 ############ YOUR CODE HERE #########
     for word in words:
-        count=1
-        print(f"{word}\t{_class}\t{count}")
+        print(f"{word}\t{_class}\t{1}")
 
 ############ (END) YOUR CODE #########
