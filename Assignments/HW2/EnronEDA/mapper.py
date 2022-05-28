@@ -28,10 +28,10 @@ for line in sys.stdin:
             spam_counts[word]+=1
 
 for word, count in ham_counts.items():
-    print(f"{word}\t{_class}\t{count}")
+    print(f"{word}\t0\t{count}")
 
 for word, count in spam_counts.items():
-    print(f"{word}\t{_class}\t{count}")
+    print(f"{word}\t1\t{count}")
 
 #     for word in words:
 #         print(f"{word}\t{_class}\t{1}")
