@@ -53,10 +53,22 @@ for line in sys.stdin:
     # TIP: try using MODEL.get(word, (0,0)) to access the tuple 
     # of log probabilities without throwing a KeyError!
 
-    logpHam, logpSpam = MODEL.get(word, (0,0))
+    #pull priors and 
+    ham_prior, spam_prior = MODEL.get("ClassPriors", (0,0))
+    ham_model_result = ham_prior
+    spam_model_result = spam_prior
     
+    for word in words:
+        logpHam, logpSpam = MODEL.get(word, (0,0))
+        ham_model_result += logpHam
+        spam_model_result += logpSpam
+    
+    if ham_model_result > spam_model_result:
+        pred_class = "0"
+    else:
+        pred_class = "1"
 
 
     ################# (END) YOUR CODE ##############
     
-    print(f"{docID}\t{_class}\t{logpHam}\t{logpSpam}\t{pred_class}")
+    print(f"{docID}\t{_class}\t{ham_model_result}\t{spam_model_result}\t{pred_class}")
