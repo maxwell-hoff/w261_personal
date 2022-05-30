@@ -3,9 +3,9 @@
 Reducer aggregates word counts by class and emits frequencies.
 
 INPUT:
-    partitionKey \t word \t class0_partialCount,class1_partialCount 
+    <specify record format here>
 OUTPUT:
-    word \t class0_partialCount,class1_partialCount,class0_condprob,class1_condprob
+    <specify record format here>
     
 Instructions:
     Again, you are free to design a solution however you see 

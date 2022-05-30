@@ -58,11 +58,13 @@ for line in sys.stdin:
     ham_model_result = ham_prior
     spam_model_result = spam_prior
     
+    #iterate through each word, and aggregate log probabilities
     for word in words:
         logpHam, logpSpam = MODEL.get(word, (0,0))
         ham_model_result += logpHam
         spam_model_result += logpSpam
     
+    #predict class based on aggregated log probabilities
     if ham_model_result > spam_model_result:
         pred_class = "0"
     else:
