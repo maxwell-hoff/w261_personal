@@ -140,11 +140,11 @@ for line in sys.stdin:
 
 
         print(f"{pKey}\t{word}\t{class0_partialCount}\t{class1_partialCount}")
-# for key in pKeys:
+for key in pKeys:
 #     print(f"{pKey}\tClassPriors\t{ham_counter}\t{spam_counter}\t{doc_counter}")
-print(f"Total\tclass_word_counts\t{ham_word_count}\t{spam_word_count}")
-print(f"Total\tdistinct_words\t{len(unique_words)}\t0")
-print(f"Total\tdoc_counts_class\t{ham_doc_count}\t{spam_doc_count}")
+    print(f"{key}\t!class_word_counts\t{ham_word_count}\t{spam_word_count}")
+    print(f"{key}\t!distinct_words\t{len(unique_words)}\t0")
+    print(f"{key}\t!doc_counts_class\t{ham_doc_count}\t{spam_doc_count}")
 # print(f"Total\tdoc_counts\t{doc_counter}\t0")
 
 
