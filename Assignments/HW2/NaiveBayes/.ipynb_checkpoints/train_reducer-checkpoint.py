@@ -63,30 +63,33 @@ for line in sys.stdin:
     if word == current_word:
         if class0_partialCount == '1':
             class0_Count+=float(class0_partialCount)
-            class0_condprob = float(class0_Count+1)/(float(class0_word_count+0e-6)+float(distinct_words+0e-6))
+            class0_condprob = float(class0_Count+1)/(float(class0_word_count)+float(distinct_words))
         elif class1_partialCount == '1':
             class1_Count+=float(class1_partialCount)
             class1_condprob = float(class1_Count+1)/(float(class1_word_count)+float(distinct_words))
     else:
         if current_word and not word.startswith('!'):
             if class1_Count>0 or class0_Count>0:
-                print(f"{current_word}\t{class0_Count},{class1_Count},{class0_condprob},{class1_condprob}")
+                print(f"{current_word}\t{class0_Count},{class1_Count},{class0_word_count},{class1_word_count},{class0_condprob},{class1_condprob}")
         if not word.startswith("!"):
             current_word = word
             class0_Count=0
             class1_Count=0
             class0_condprob=0
             class1_condprob=0
+            class0_word_count=0
+            class1_word_count=0
             if class0_partialCount == '1':
                 class0_Count+=float(class0_partialCount)
+                class0_condprob = float(class0_Count+1)/(float(class0_word_count)+float(distinct_words))
             elif class1_partialCount == '1':
                 class1_Count+=float(class1_partialCount)
+                class1_condprob = float(class1_Count+1)/(float(class1_word_count)+float(distinct_words))
 
 
 
-print(f"{current_word}\t{class0_Count},{class1_Count},{class0_condprob},{class1_condprob}")
+print(f"{current_word}\t{class0_Count},{class1_Count},{class0_word_count},{class1_word_count},{class0_condprob},{class1_condprob}")
 print(f"ClassPriors\t")
-
 
 
 

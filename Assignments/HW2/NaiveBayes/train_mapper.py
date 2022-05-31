@@ -51,7 +51,7 @@ from collections import defaultdict
 
 #################### YOUR CODE HERE ###################
 #read number of partitions specified by mapreduce job
-N = int(os.getenv('mapreduce_job_reduces', default=2))
+N = int(os.getenv('mapreduce_job_reduces', default=1))
 
 # helper functions
 def makeKeyHash(key, num_reducers=N):
