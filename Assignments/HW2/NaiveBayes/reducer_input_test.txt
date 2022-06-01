@@ -1,14 +1,13 @@
-A  !class_word_counts  3  8
-A  !distinct_words     6  0
-A  !doc_counts_class   1  3
-A  beijing             0  1
-A  chinese             0  1
-A  chinese             0  1
-A  chinese             0  1
-A  chinese             0  1
-A  chinese             0  1
-A  chinese             1  0
-A  japan               1  0
-A  macao               0  1
-A  shanghai            0  1
-A  tokyo               1  0
+0  !class_word_counts  3,8
+0  !doc_counts_class   1,3
+0  beijing             0,1
+0  chinese             0,1
+0  chinese             0,1
+0  chinese             0,1
+0  chinese             0,1
+0  chinese             0,1
+0  chinese             1,0
+0  japan               1,0
+0  macao               0,1
+0  shanghai            0,1
+0  tokyo               1,0

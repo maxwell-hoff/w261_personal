@@ -50,27 +50,19 @@ import os
 from collections import defaultdict
 
 #################### YOUR CODE HERE ###################
-#read number of partitions specified by mapreduce job
-N = int(os.getenv('mapreduce_job_reduces', default=1))
+# get reduce count from Hadoop job
+reducer_count = int(os.getenv('mapreduce_job_reduces', default=1))
 
 # helper functions
-def makeKeyHash(key, num_reducers=N):
+def makeKeyHash(key, num_reducers=reducer_count):
     byteof = lambda char: int(format(ord(char), 'b'), 2)
     current_hash = 0
     for c in key:
         current_hash = (current_hash * 31 + byteof(c))
     return current_hash % num_reducers
 
-# helper function
-def makeKeyFile(num_reducers=N):  
-    KEYS = list(map(chr, range(ord('A'), ord('Z')+1)))[:N]
-    partition_keys = sorted(KEYS, key=lambda k: makeKeyHash(k,num_reducers=N))
-
-    return partition_keys
 
 
-# call your helper function to get partition keys
-pKeys = makeKeyFile()
 
 # initialize counters/vars
 # doc_counter=0
@@ -80,12 +72,7 @@ spam_doc_count=0
 ham_word_count=0
 spam_word_count=0
 
-unique_words={}
 
-
-
-# ham_counts = defaultdict(int)
-# spam_counts = defaultdict(int)
 
 # read from standard input
 for line in sys.stdin:
@@ -105,8 +92,7 @@ for line in sys.stdin:
     for word in words:
         class0_partialCount=0
         class1_partialCount=0
-        pKey = pKeys[makeKeyHash(word)]
-        unique_words[word]=''
+        partition_key = makeKeyHash(word[0], num_reducers=reducer_count)
         if _class == '0':
             class0_partialCount+=1
             ham_word_count+=1
@@ -115,40 +101,20 @@ for line in sys.stdin:
             spam_word_count+=1
         
 
-#     #version 2 - using a dictionary
-#     #create counters for total documents and documents by class
-#     doc_counter+=1
-#     if _class == '0':
-#         ham_counter+=1
-#     elif _class == '1':
-#         spam_counter+=1
-    
-#     # initialize counters 
-
-#     for word in words:
-#         if _class == '0':
-#             ham_counts[word]+=1
-#         elif _class == '1':
-#             spam_counts[word]+=1
 
 
+        print(f"{partition_key}\t{word}\t{class0_partialCount},{class1_partialCount}")
+# for key in pKeys:
+# #     print(f"{pKey}\tClassPriors\t{ham_counter}\t{spam_counter}\t{doc_counter}")
+#     print(f"{key}\t!class_word_counts\t{ham_word_count}\t{spam_word_count}")
+#     print(f"{key}\t!distinct_words\t{len(unique_words)}\t0")
+#     print(f"{key}\t!doc_counts_class\t{ham_doc_count}\t{spam_doc_count}")
+# # print(f"Total\tdoc_counts\t{doc_counter}\t0")
 
 
-
-
-
-
-
-        print(f"{pKey}\t{word}\t{class0_partialCount}\t{class1_partialCount}")
-for key in pKeys:
-#     print(f"{pKey}\tClassPriors\t{ham_counter}\t{spam_counter}\t{doc_counter}")
-    print(f"{key}\t!class_word_counts\t{ham_word_count}\t{spam_word_count}")
-    print(f"{key}\t!distinct_words\t{len(unique_words)}\t0")
-    print(f"{key}\t!doc_counts_class\t{ham_doc_count}\t{spam_doc_count}")
-# print(f"Total\tdoc_counts\t{doc_counter}\t0")
-
-
-
+for num in range(reducer_count):
+    print(f"{num}\t!class_word_counts\t{ham_word_count},{spam_word_count}")
+    print(f"{num}\t!doc_counts_class\t{ham_doc_count},{spam_doc_count}")
 
 
 
