@@ -99,18 +99,8 @@ for line in sys.stdin:
         elif _class == '1':
             class1_partialCount+=1
             spam_word_count+=1
-        
-
-
 
         print(f"{partition_key}\t{word}\t{class0_partialCount},{class1_partialCount}")
-# for key in pKeys:
-# #     print(f"{pKey}\tClassPriors\t{ham_counter}\t{spam_counter}\t{doc_counter}")
-#     print(f"{key}\t!class_word_counts\t{ham_word_count}\t{spam_word_count}")
-#     print(f"{key}\t!distinct_words\t{len(unique_words)}\t0")
-#     print(f"{key}\t!doc_counts_class\t{ham_doc_count}\t{spam_doc_count}")
-# # print(f"Total\tdoc_counts\t{doc_counter}\t0")
-
 
 for num in range(reducer_count):
     print(f"{num}\t!class_word_counts\t{ham_word_count},{spam_word_count}")

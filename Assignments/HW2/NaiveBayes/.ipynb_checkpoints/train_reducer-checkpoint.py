@@ -48,44 +48,15 @@ for line in sys.stdin:
     elif word == current_word:
         class0_Count+=float(class0_partialCount)
         class1_Count+=float(class1_partialCount)
-#         if class0_partialCount == '1':
-#             class0_Count+=float(class0_partialCount)
-#             if class0_word_count == 0:
-#                 class0_condprob = 0
-#             else:
-#                 class0_condprob = float(class0_Count)/(float(class0_word_count))
-#         elif class1_partialCount == '1':
-#             class1_Count+=float(class1_partialCount)
-#             if class1_word_count == 0:
-#                 class1_word_count = 0
-#             else:
-#                 class1_condprob = float(class1_Count)/(float(class1_word_count))
     else:
         if current_word:
-            print(f"{current_word}\t{class0_Count},{class1_Count}\t{class0_Count/class0_word_count}\t{class1_Count/class1_word_count}")
-#             if class1_Count>0 or class0_Count>0:
-#                 print(f"{current_word}\t{class0_Count},{class1_Count},{class0_word_count},{class1_word_count},{class0_condprob},{class1_condprob}")
-#         if not word.startswith("!"):
+            print(f"{current_word}\t{class0_Count},{class1_Count},{class0_Count/class0_word_count},{class1_Count/class1_word_count}")
         current_word = word
         class0_Count=float(class0_partialCount)
         class1_Count=float(class1_partialCount)
 
-#             if class0_partialCount == '1':
-#                 class0_Count+=float(class0_partialCount)
-#                 if class0_word_count == 0:
-#                     class0_word_count = 0
-#                 else:
-#                     class0_condprob = float(class0_Count)/(float(class0_word_count))
-#             elif class1_partialCount == '1':
-#                 class1_Count+=float(class1_partialCount)
-#                 if class1_word_count == 0:
-#                     class1_word_count = 0
-#                 else:
-#                     class1_condprob = float(class1_Count)/(float(class1_word_count))
 
-
-
-print(f"{current_word}\t{class0_Count},{class1_Count}\t{class0_Count/class0_word_count}\t{class1_Count/class1_word_count}")
+print(f"{current_word}\t{class0_Count},{class1_Count},{class0_Count/class0_word_count},{class1_Count/class1_word_count}")
 
 if int(partition_key) == 0:
     print(f"ClassPriors\t{ham_doc_count},{spam_doc_count},{ham_doc_count/float(ham_doc_count+spam_doc_count)},{spam_doc_count/float(ham_doc_count+spam_doc_count)}")
