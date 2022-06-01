@@ -6,8 +6,8 @@ import numpy as np
 
 #################### YOUR CODE HERE ###################
 #enter new parameters for smoothing
-# vocab_size = int(os.getenv('vocab_size', default=1))
-vocab_size=6
+vocab_size = int(os.getenv('vocab_size', default=1))
+# vocab_size=6
 k=1 
 
 class0_word_count=0
