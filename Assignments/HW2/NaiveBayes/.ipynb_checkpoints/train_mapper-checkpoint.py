@@ -51,7 +51,7 @@ from collections import defaultdict
 
 #################### YOUR CODE HERE ###################
 # get reduce count from Hadoop job
-reducer_count = int(os.getenv('mapreduce_job_reduces', default=1))
+reducer_count = int(os.getenv('mapreduce_job_reduces', default=2))
 
 # helper functions
 def makeKeyHash(key, num_reducers=reducer_count):
@@ -65,7 +65,6 @@ def makeKeyHash(key, num_reducers=reducer_count):
 
 
 # initialize counters/vars
-# doc_counter=0
 ham_doc_count=0
 spam_doc_count=0
 
@@ -82,7 +81,6 @@ for line in sys.stdin:
     
     #version 1
     #create counters for total documents and documents by class
-#     doc_counter+=1
     if _class == '0':
         ham_doc_count+=1
     elif _class == '1':
@@ -92,16 +90,20 @@ for line in sys.stdin:
     for word in words:
         class0_partialCount=0
         class1_partialCount=0
+        
+        #create a partition for each word
         partition_key = makeKeyHash(word[0], num_reducers=reducer_count)
+        #increment counters
         if _class == '0':
             class0_partialCount+=1
             ham_word_count+=1
         elif _class == '1':
             class1_partialCount+=1
             spam_word_count+=1
-
+        
         print(f"{partition_key}\t{word}\t{class0_partialCount},{class1_partialCount}")
 
+#print document counters and word counters for each class
 for num in range(reducer_count):
     print(f"{num}\t!class_word_counts\t{ham_word_count},{spam_word_count}")
     print(f"{num}\t!doc_counts_class\t{ham_doc_count},{spam_doc_count}")
