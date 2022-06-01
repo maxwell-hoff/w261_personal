@@ -1,14 +1,6 @@
-#!/usr/bin/env python
 
-import os
-import sys                                                  
-import numpy as np  
-
-#################### YOUR CODE HERE ###################
-#enter new parameters for smoothing
-# vocab_size = int(os.getenv('vocab_size', default=1))
-vocab_size=6
-k=1 
+import re
+import sys
 
 class0_word_count=0
 class1_word_count=0
@@ -42,13 +34,13 @@ for line in sys.stdin:
     else:
         #print prior word if it's the last word
         if current_word:
-            print(f"{current_word}\t{class0_Count},{class1_Count},{(class0_Count+k)/float(class0_word_count+vocab_size)},{(class1_Count+k)/float(class1_word_count+vocab_size)}")
+            print(f"{current_word}\t{class0_Count},{class1_Count},{class0_Count/float(class0_word_count)},{class1_Count/float(class1_word_count)}")
         current_word = word
         class0_Count=int(class0_partialCount)
         class1_Count=int(class1_partialCount)
 
 #print last record
-print(f"{current_word}\t{class0_Count},{class1_Count},{(class0_Count+k)/float(class0_word_count+vocab_size)},{(class1_Count+k)/float(class1_word_count+vocab_size)}")
+print(f"{current_word}\t{class0_Count},{class1_Count},{class0_Count/float(class0_word_count)},{class1_Count/float(class1_word_count)}")
 
 if int(partition_key) == 0:
     print(f"ClassPriors\t{ham_doc_count},{spam_doc_count},{ham_doc_count/float(ham_doc_count+spam_doc_count)},{spam_doc_count/float(ham_doc_count+spam_doc_count)}")
@@ -57,6 +49,4 @@ if int(partition_key) == 0:
 
 
 
-
-
-#################### (END) YOUR CODE ###################
+##################### (END) CODE HERE ####################
